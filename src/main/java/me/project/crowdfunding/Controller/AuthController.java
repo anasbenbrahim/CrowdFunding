@@ -75,6 +75,13 @@ public class AuthController {
         }
     }
 
+    // Reset profile password
+    @PostMapping("/reset-profile-password")
+    public ResponseEntity<User> resetPassword(@RequestBody ResetPasswordDto resetPasswordDto) {
+        User updatedUser = authService.resetPassword(resetPasswordDto);
+        return ResponseEntity.ok(updatedUser);
+    }
+
     
 
     @GetMapping("/verify")
@@ -87,7 +94,7 @@ public class AuthController {
 
         User user = userOptional.get();
         user.setEmailVerified(true);
-        user.setEmailVerificationCode(null); // Optionnel : le code n'est plus utile
+        user.setEmailVerificationCode(null);
         userRepository.save(user);
 
         return ResponseEntity.ok("Email vérifié avec succès. Vous pouvez maintenant vous connecter.");

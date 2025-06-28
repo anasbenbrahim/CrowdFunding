@@ -48,8 +48,8 @@ public class PasswordResetServiceImpl implements PasswordResetService {
         }
 
         user.setPassword(passwordEncoder.encode(newPassword));
-        user.setEmailVerificationCode(null); // Invalide le code
-        user.setEmailVerified(true); // Facultatif
+        user.setEmailVerificationCode(null);
+        user.setEmailVerified(true);
         userRepository.save(user);
     }
 }

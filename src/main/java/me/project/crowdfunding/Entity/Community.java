@@ -16,9 +16,6 @@ public class Community {
     private String name;
     private String description;
 
-    @ManyToOne
-    @JoinColumn(name = "campaign_id")
-    private Campaign campaign;
 
     @ManyToOne
     @JoinColumn(name = "user_id")

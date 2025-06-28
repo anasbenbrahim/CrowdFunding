@@ -26,6 +26,6 @@ public class Campaign {
     @ManyToOne
     private User user;
 
-    @OneToMany(mappedBy = "campaign", cascade = CascadeType.ALL)
+    @OneToMany()
     private List<Community> communities;
 }

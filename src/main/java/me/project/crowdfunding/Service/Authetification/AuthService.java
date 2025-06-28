@@ -13,13 +13,12 @@ import java.util.List;
 
 public interface AuthService {
 
-    // Authentication Methods
+
     AuthetificationResponse register(SignUpRequest signUpRequest);
     
     ResponseEntity<String> login(AuthentificationRequest authenticationRequest, 
                                HttpServletResponse response) throws IOException;
 
-    // User Management Methods
     List<User> users();
     
     String deleteUser(Long id);
@@ -28,6 +27,6 @@ public interface AuthService {
     
     SignUpRequest updateUserProfile(Long userId, SignUpRequest signUpRequest);
 
-    // Password Management
+
     User resetPassword(ResetPasswordDto resetPasswordDto);
 }

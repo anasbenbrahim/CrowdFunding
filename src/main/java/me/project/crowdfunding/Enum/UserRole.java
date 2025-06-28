@@ -2,8 +2,8 @@ package me.project.crowdfunding.Enum;
 
 public enum UserRole {
     ADMIN,
-    PORTEUR,
-    CONTRIBUTEUR,
+    PORTER,
+    CONTRIBUTOR,
     SIMPLE_USER
 
 }

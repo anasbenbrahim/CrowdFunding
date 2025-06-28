@@ -82,5 +82,15 @@ public class User implements UserDetails {
     }
 
 
+    @OneToMany(mappedBy = "user")
+    private List<Community> communities;
+
+    @OneToMany(mappedBy = "user")
+    private List<Campaign> campaigns;
+
+
+
+
+
 
 }

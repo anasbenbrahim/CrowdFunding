@@ -1,0 +1,38 @@
+/* Les mêmes styles que votre LoginPage */
+.login-page {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-fluid, .row {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.left-column {
+  background-color: #CAF0F8;
+  border-color: #CAF0F8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.right-column {
+  background-color: #f8f9fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+@media (max-width: 767.98px) {
+  .left-column, .right-column {
+    height: auto;
+    min-height: 50vh;
+  }
+}

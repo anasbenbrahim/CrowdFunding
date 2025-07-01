@@ -5,6 +5,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
  import RootLayout from "../components/Layout/Layout"; 
  import LandingPage from "../components/Layout"; 
  import CommunitiesPage from "../pages/CommunitiesPage"; 
+ import CommunitiesPageSignedin from "../components/signedin/CommunitiesPageSignedin"
+ import CommunityPageSignedin from "../components/signedin/CommunityPage.jsx"
  import CommunityPage from "../pages/CommunityPage"; 
  import CampaignsPage from "../pages/CampaignsPage"; 
  import ProjectDetailPage from "../pages/ProjectDetailPage"; 
@@ -26,7 +28,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
          <Route 
            path="/" 
            element={ 
-             <div className="flex flex-col min-h-screen overflow-hidden supports-[overflow:clip]:overflow-clip"> 
+             <div className="flex flex-col min-h-screen overflow-auto supports-[overflow:clip]:overflow-clip"> 
                  <LandingPage /> 
              </div> 
            } 
@@ -34,7 +36,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
          <Route 
            path="/communities" 
            element={ 
-             <div className="flex flex-col min-h-screen overflow-hidden supports-[overflow:clip]:overflow-clip"> 
+             <div className="flex flex-col min-h-screen overflow-auto supports-[overflow:clip]:overflow-clip"> 
                <Layout> 
                  <CommunitiesPage /> 
                </Layout> 
@@ -44,7 +46,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
          <Route 
            path="/community/:id" 
            element={ 
-             <div className="flex flex-col min-h-screen overflow-hidden supports-[overflow:clip]:overflow-clip"> 
+             <div className="flex flex-col min-h-screen overflow-auto supports-[overflow:clip]:overflow-clip"> 
                <Layout> 
                  <CommunityPage /> 
                </Layout> 
@@ -54,7 +56,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
          <Route 
            path="/Campaigns" 
            element={ 
-             <div className="flex flex-col min-h-screen overflow-hidden supports-[overflow:clip]:overflow-clip"> 
+             <div className="flex flex-col min-h-screen overflow-auto supports-[overflow:clip]:overflow-clip"> 
                <Layout> 
                  <CampaignsPage /> 
                </Layout> 
@@ -64,7 +66,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
          <Route 
            path="/project/:id" 
            element={ 
-             <div className="flex flex-col min-h-screen overflow-hidden supports-[overflow:clip]:overflow-clip"> 
+             <div className="flex flex-col min-h-screen overflow-auto supports-[overflow:clip]:overflow-clip"> 
                <Layout> 
                  <ProjectDetailPage /> 
                </Layout> 
@@ -74,7 +76,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
          <Route 
            path="/create-project" 
            element={ 
-             <div className="flex flex-col min-h-screen overflow-hidden supports-[overflow:clip]:overflow-clip"> 
+             <div className="flex flex-col min-h-screen overflow-auto supports-[overflow:clip]:overflow-clip"> 
                <Layout> 
                  <CreateProjectPage /> 
                </Layout> 
@@ -84,7 +86,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
          <Route 
            path="/ProjectDetail" 
            element={ 
-             <div className="flex flex-col min-h-screen overflow-hidden supports-[overflow:clip]:overflow-clip"> 
+             <div className="flex flex-col min-h-screen overflow-auto supports-[overflow:clip]:overflow-clip"> 
                <Layout> 
                  <ProjectDetailPage /> 
                </Layout> 
@@ -94,13 +96,39 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
          <Route 
            path="/payments" 
            element={ 
-             <div className="flex flex-col min-h-screen overflow-hidden supports-[overflow:clip]:overflow-clip"> 
+             <div className="flex flex-col min-h-screen overflow-auto supports-[overflow:clip]:overflow-clip"> 
                <Layout> 
                  <PaymentsPage /> 
                </Layout> 
              </div> 
            } 
          /> 
+         
+
+         
+          <Route 
+            path="/communities-page" 
+            element={
+              <div className="flex flex-col min-h-screen overflow-auto supports-[overflow:clip]:overflow-clip">
+                <Layout>
+                  <CommunitiesPageSignedin />
+                </Layout>
+              </div>
+            }
+          />
+          <Route 
+            path="/community/:id" 
+            element={
+              <div className="flex flex-col min-h-screen overflow-auto supports-[overflow:clip]:overflow-clip">
+                <Layout>
+                  <CommunityPageSignedin />
+                </Layout>
+              </div>
+            }
+          />
+
+
+
        </Routes> 
      </Router> 
    ); 

@@ -5,7 +5,7 @@ const Layout = ({ children }) => {
   return (
     <div className="App bg-light min-vh-100">
       <Navbar />
-      <main className="py-4 overflow-y-auto">
+      <main className="flex-1 py-4 overflow-y-auto">
         {children}
       </main>
     </div>

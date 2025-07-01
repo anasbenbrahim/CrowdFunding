@@ -1,6 +1,7 @@
 package me.project.crowdfunding.Entity;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 import lombok.*;
@@ -82,10 +83,16 @@ public class User implements UserDetails {
     }
 
 
-    @OneToMany(mappedBy = "user")
-    private List<Community> communities;
+    @ManyToMany
+    @JoinTable(
+        name = "user_community",
+        joinColumns = @JoinColumn(name = "user_id"),
+        inverseJoinColumns = @JoinColumn(name = "community_id")
+    )
+    private java.util.Set<Community> communities = new java.util.HashSet<>();
 
     @OneToMany(mappedBy = "user")
+    @JsonIgnore
     private List<Campaign> campaigns;
 
 

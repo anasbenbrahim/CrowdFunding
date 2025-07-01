@@ -7,9 +7,6 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
-# Spring Boot application config
-src/main/resources/application*.properties
-
 ### STS ###
 .apt_generated
 .classpath

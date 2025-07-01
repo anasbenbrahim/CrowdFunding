@@ -13,7 +13,7 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/campaign")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "http://localhost:3000", allowCredentials = "true")
 public class CampaignController {
 
     @Autowired
@@ -49,7 +49,7 @@ public class CampaignController {
         return ResponseEntity.ok(campaigns);
     }
 
-    @GetMapping
+    @GetMapping("/achifage")
     public ResponseEntity<List<Campaign>> getActiveCampaigns() {
         List<Campaign> campaigns = campaignService.getActiveCampaigns();
         return ResponseEntity.ok(campaigns);
